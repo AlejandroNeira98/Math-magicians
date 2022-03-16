@@ -10,7 +10,7 @@ class Calculator extends React.PureComponent {
           <Key symbol="AC" />
           <Key symbol="+/-" />
           <Key symbol="%" />
-          <Key symbol="/" color="orange" />
+          <Key symbol="÷" color="orange" />
         </div>
         <div className="row">
           <Key symbol="7" />
