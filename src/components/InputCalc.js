@@ -1,43 +1,27 @@
 import React from 'react';
-import Key from './Calculator';
+import PropTypes from 'prop-types';
 
-class InputCalculator extends React.PureComponent {
+class Key extends React.PureComponent {
   render() {
+    const { color, symbol } = this.props;
     return (
       <div>
-        <div className="screen">0</div>
-        <div className="row">
-          <Key symbol="AC" />
-          <Key symbol="+/-" />
-          <Key symbol="%" />
-          <Key symbol="/" color="orange" />
-        </div>
-        <div className="row">
-          <Key symbol="7" />
-          <Key symbol="8" />
-          <Key symbol="9" />
-          <Key symbol="X" color="orange" />
-        </div>
-        <div className="row">
-          <Key symbol="4" />
-          <Key symbol="5" />
-          <Key symbol="6" />
-          <Key symbol="-" color="orange" />
-        </div>
-        <div className="row">
-          <Key symbol="1" />
-          <Key symbol="2" />
-          <Key symbol="3" />
-          <Key symbol="+" color="orange" />
-        </div>
-        <div className="row">
-          <Key symbol="0" color="double" />
-          <Key symbol="." />
-          <Key symbol="=" color="orange" />
-        </div>
+        <button type="button" className={color}>
+          {symbol}
+        </button>
       </div>
     );
   }
 }
 
-export default InputCalculator;
+Key.propTypes = {
+  color: PropTypes.string,
+  symbol: PropTypes.string,
+};
+
+Key.defaultProps = {
+  color: 'gray',
+  symbol: '0',
+};
+
+export default Key;

@@ -1,9 +1,12 @@
-import InputCalculator from './components/Calculator';
+import React from 'react';
+import Calculator from './components/Calculator';
 
-function App() {
-  return (
-    <InputCalculator />
-  );
+class App extends React.PureComponent {
+  render() {
+    return (
+      <Calculator />
+    );
+  }
 }
 
 export default App;
