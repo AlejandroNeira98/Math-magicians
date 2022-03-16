@@ -5,7 +5,25 @@ React app that displays a calculator and some information.
 
 ## Build with
 - React
+- JavaScript
+- HTML
+- CSS
 
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+- Have Node installed
+### Setup
+- git clone https://github.com/AlejandroNeira98/math-magicians.git
+- cd math-magicians 
+### Install
+- npm install 
+### Usage
+- npm start (to see the page in the browser)
+- npm run build (to generate the distribution folder from webpack)
 
 ## Author
 
@@ -14,6 +32,10 @@ React app that displays a calculator and some information.
 - GitHub: [@AlejandroNeira98](https://github.com/AlejandroNeira98)
 - Twitter: [@JANP_19](https://twitter.com/JANP_19)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/alejandro-neira-0b45b6226/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
 
 ## Show your support
 
