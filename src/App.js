@@ -1,4 +1,4 @@
-import InputCalculator from "./components/Calculator";
+import InputCalculator from './components/Calculator';
 
 function App() {
   return (
