@@ -9,20 +9,16 @@ const Calculator = () => {
   const [display, setDisplay] = useState('0');
 
   const retrieveSymbol = (symbol) => {
-    console.log(symbol);
-
     const calcObj = calculate({ total, next, operation }, symbol);
     setTotal(calcObj.total);
     setNext(calcObj.next);
     setOperation(calcObj.operation);
 
-    if (!next && !total && !operation) { setDisplay('0'); }
-    if (next && !total && !operation) { setDisplay(next); }
-    if (!next && total && operation) { setDisplay('0'); }
-    if (next && total && operation) { setDisplay(next); }
-    if (!next && total && !operation) { setDisplay(total); }
-
-    console.log(total, next, operation, display);
+    if (!calcObj.next && !calcObj.total && !calcObj.operation) { setDisplay('0'); }
+    if (calcObj.next && !calcObj.total && !calcObj.operation) { setDisplay(calcObj.next); }
+    if (!calcObj.next && calcObj.total && calcObj.operation) { setDisplay('0'); }
+    if (calcObj.next && calcObj.total && calcObj.operation) { setDisplay(calcObj.next); }
+    if (!calcObj.next && calcObj.total && !calcObj.operation) { setDisplay(calcObj.total); }
   };
 
   return (
