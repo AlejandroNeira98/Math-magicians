@@ -7,45 +7,36 @@ class Calculator extends React.PureComponent {
     super(props);
     this.retrieveSymbol = this.retrieveSymbol.bind(this);
     this.state = {
-      display: '0',
       total: null,
       next: null,
       operation: null,
     };
   }
 
-  async retrieveSymbol(symbol) {
-    const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-    const operators = ['%', '÷', 'x', '-', '+'];
-    let {
-      display, total, next, operation,
+  retrieveSymbol(symbol) {
+    const {
+      total, next, operation,
     } = this.state;
-
     console.log(symbol);
 
-    if (numbers.includes(symbol)) {
-      if (display === '0') {
-        this.setState({ display: symbol, total: symbol });
-      } else if (total === null) {
-        this.setState({ display: display + symbol, total: symbol });
-      } else { this.setState({ display: display + symbol, total: total + symbol }); }
-    } else if (operators.includes(symbol)) {
-      this.setState({
-        operation: symbol,
-        next: total,
-        total: null,
-        display: '0',
-      });
-    } else {
-      this.setState(calculate({ total, next, operation }, symbol));
-      this.setState({ display: total });
-      if (display === null) { this.setState({ display: '0' }); }
-    }
+    this.setState(calculate({ total, next, operation }, symbol));
+    this.setState((prevState) => ({
+      total: prevState.total,
+      next: prevState.next,
+      operation: prevState.operation,
+    }));
+
     console.log(this.state);
   }
 
   render() {
-    const { display } = this.state;
+    let display = '0';
+    const { next, total, operation } = this.state;
+    if (next === null && total === null && operation === null) { display = '0'; }
+    if (next !== null && total === null && operation === null) { display = next; }
+    if (next === null && total !== null && operation !== null) { display = '0'; }
+    if (next !== null && total !== null && operation !== null) { display = next; }
+    if (next === null && total !== null && operation === null) { display = total; }
     return (
       <div>
         <div className="screen">{display}</div>
