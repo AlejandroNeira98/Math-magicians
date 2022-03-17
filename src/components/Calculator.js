@@ -17,7 +17,7 @@ class Calculator extends React.PureComponent {
   async retrieveSymbol(symbol) {
     const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
     const operators = ['%', '÷', 'x', '-', '+'];
-    const {
+    let {
       display, total, next, operation,
     } = this.state;
 
@@ -34,14 +34,12 @@ class Calculator extends React.PureComponent {
         operation: symbol,
         next: total,
         total: null,
-        display: `${display} ${symbol} `,
+        display: '0',
       });
-    } else if (symbol === '=') {
-      this.setState(calculate({ total, next, operation }, symbol));
-      this.setState({ display: total });
     } else {
       this.setState(calculate({ total, next, operation }, symbol));
       this.setState({ display: total });
+      if (display === null) { this.setState({ display: '0' }); }
     }
     console.log(this.state);
   }
