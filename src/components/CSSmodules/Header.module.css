@@ -11,5 +11,6 @@ header {
 .calcLink {
   border-left: 1px solid black;
   border-right: 1px solid black;
-  padding: 0px 4px 0px 4px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
