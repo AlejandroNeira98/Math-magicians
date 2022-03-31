@@ -1,16 +1,16 @@
-import React from "react";
-import { render, screen , fireEvent } from "@testing-library/react";
-import Calculator from "./Calculator";
-
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
+import Calculator from './Calculator';
 
 it('it works', () => {
-    const tree = render(<Calculator />)
+  const tree = render(<Calculator />);
   expect(tree).toMatchSnapshot();
-})
+});
 // we stoped here
-// it('it works', () => {
-//     render(<Calculator />)
-    
-//     fireEvent.click(screen.getByTestId('btn9'))
-//     expect(screen.getByTestId('answer')).toContain(screen.getByTestId('btn9'))
-// })
+it('it works', async () => {
+  render(<Calculator />);
+  await userEvent.click(screen.getByText('9'));
+  expect(screen.getByTestId('answer')).toHaveTextContent('9');
+});
