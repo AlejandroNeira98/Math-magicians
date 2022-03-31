@@ -23,7 +23,7 @@ const Calculator = () => {
 
   return (
     <div id="calc">
-      <div className="screen">{display}</div>
+      <div className="screen" data-testid='answer'>{display}</div>
       <div className="row">
         <Key symbol="AC" retrieveSymbol={retrieveSymbol} />
         <Key symbol="+/-" retrieveSymbol={retrieveSymbol} />
@@ -33,7 +33,7 @@ const Calculator = () => {
       <div className="row">
         <Key symbol="7" retrieveSymbol={retrieveSymbol} />
         <Key symbol="8" retrieveSymbol={retrieveSymbol} />
-        <Key symbol="9" retrieveSymbol={retrieveSymbol} />
+        <Key symbol="9" retrieveSymbol={retrieveSymbol} data-testid='btn9' />
         <Key symbol="x" color="orange" retrieveSymbol={retrieveSymbol} />
       </div>
       <div className="row">

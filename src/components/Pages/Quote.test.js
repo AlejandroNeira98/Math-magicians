@@ -1,13 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
-
 // import renderer from 'react-test-renderer';
-import Header from "./Header";
+import Quote from "./Quote";
 it('it works', () => {
-    const tree = render(
-    <Router>
-      <Header />
-    </Router>)
+    const tree = render(<Quote />)
   expect(tree).toMatchSnapshot();
 })
