@@ -22,7 +22,7 @@ const Calculator = () => {
   };
 
   return (
-    <div>
+    <div id="calc">
       <div className="screen">{display}</div>
       <div className="row">
         <Key symbol="AC" retrieveSymbol={retrieveSymbol} />
