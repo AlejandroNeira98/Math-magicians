@@ -9,6 +9,9 @@ React app that displays a calculator and some information.
 - HTML
 - CSS
 
+## Live Demo
+
+https://cerulean-sprite-6ffbe8.netlify.app
 
 ## Getting Started
 
